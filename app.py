@@ -1,14 +1,13 @@
 from flask import Flask, request
-from utils import generate_fake_users
+from utils import open_file, generate_fake_users
 import requests
 
 app = Flask(__name__)
 
 @app.route('/requirements/')
-def open_file():
+def open_a_file():
+        return open_file()
 
-    with open ('requirements.txt', encoding = 'utf-8') as file:
-        return file.read()
 
 @app.route('/generate_users/')
 def generate_users():
